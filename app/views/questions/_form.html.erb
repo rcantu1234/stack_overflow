@@ -1,23 +1,13 @@
-<%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<%= simple_form_for(@question) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-inputs">">
-    <%= f.input :title %><br>
-    <%= f.input :body %><br>
-    <%= f.input :keyword %><br>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :body %>
+    <%= f.input :keyword %>
   </div>
 
-  <div class="actions">
+  <div class="form-actions">
     <%= f.submit %>
   </div>
 <% end %>
