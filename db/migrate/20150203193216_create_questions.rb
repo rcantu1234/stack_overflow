@@ -2,8 +2,8 @@ class CreateQuestions < ActiveRecord::Migration
   def change
     create_table :questions do |t|
       t.string :title
-      t.textarea :body
-      t.string :keywords
+      t.text :body
+      t.string :keyword
 
       t.timestamps null: false
     end
