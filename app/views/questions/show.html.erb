@@ -20,7 +20,7 @@
   <h3>Answer</h3>
   <ul>
   <%= @question.answers.each do |answer| %>
-    <p> <li><%= link_to(question.title, answer) %> | <%= 'completed' if answer.completed %></li> </p>
+    <p> <li><%= link_to(answer.text, answer) %> | <%= 'completed' if answer.completed %></li> </p>
   <% end %>
   </ul>
 </div>
