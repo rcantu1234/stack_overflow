@@ -15,19 +15,16 @@
   <%= @question.keyword %>
 </p>
 
-
+<p>
+  <strong>Answers Given:</strong>
+</p>
 <div class='answers'>
-  <h3>Answer</h3>
   <ul>
-  <%= @question.answers.each do |answer| %>
-    <p> <li><%= link_to(answer.text, answer) %> | <%= 'completed' if answer.completed %></li> </p>
+  <% @question.answers.each do |answer| %>
+    <p> <li><%= link_to(answer.text, answer) %> </li> </p>
   <% end %>
   </ul>
 </div>
 
-<div class='new-answer col-md-6'>
-  <h4>New Answer</h4>
-  <%= render partial: 'answers/form' %>
-</div>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

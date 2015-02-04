@@ -2,7 +2,7 @@
 
 <h1>Listing Questions</h1>
 
-<table>
+<table class='table table-striped'>
   <thead>
     <tr>
       <th>Title</th>
@@ -21,6 +21,7 @@
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Enter Answer', new_answer_path %>
       </tr>
     <% end %>
   </tbody>
